@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:;Vignesh;;;
+FN:Vignesh
+ORG:Point Academy
+TITLE:ROLE TITLE
+TEL;TYPE=CELL,VOICE:+00 000 000 0000
+EMAIL;TYPE=INTERNET,WORK:vignesh@pointacademy.com
+URL:https://pointacademy.com
+NOTE:Met at [AI SHOW NAME]\, [DATE]
+END:VCARD

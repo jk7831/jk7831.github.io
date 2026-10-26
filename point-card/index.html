@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vignesh · Point Academy</title>
+<meta name="description" content="Vignesh — Point Academy. Tap to save contact.">
+<meta name="theme-color" content="#07080d">
+<style>
+:root{
+  --bg:#07080d; --ink:#f4f6fb; --muted:#8b93a7; --accent:#7c5cff; --accent2:#22d3ee;
+  --mx:50%; --my:50%; --ang:180deg; --rx:0deg; --ry:0deg; --glare:0;
+}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{
+  background:radial-gradient(120% 80% at 50% 0%,#141633 0%,var(--bg) 60%);
+  color:var(--ink);font:16px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  padding:max(24px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom));
+  overflow-x:hidden;
+}
+.who{text-align:center}
+.who h1{font-size:clamp(28px,8vw,40px);letter-spacing:-.02em;font-weight:700}
+.who p{color:var(--muted);margin-top:4px;font-size:15px}
+
+.stage{perspective:900px;width:min(92vw,420px);touch-action:pan-y}
+.card{
+  position:relative;aspect-ratio:1.75/1;width:100%;border-radius:18px;
+  transform:rotateX(var(--rx)) rotateY(var(--ry));
+  transition:transform .15s ease-out;will-change:transform;
+  background:linear-gradient(135deg,#10122a,#0a0b16);
+  box-shadow:0 30px 60px -20px rgba(124,92,255,.45),0 0 0 1px rgba(255,255,255,.08) inset;
+  overflow:hidden;cursor:grab;
+}
+.card.idle{animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:rotateX(4deg) rotateY(-6deg)}}
+.face{position:absolute;inset:0;padding:6% 7%;display:flex;flex-direction:column;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.02em}
+.logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-weight:800;color:#07080d;font-size:15px}
+.name{font-size:clamp(22px,6.5vw,30px);font-weight:700;letter-spacing:-.01em}
+.role{color:var(--muted);font-size:clamp(12px,3.4vw,14px);margin-top:2px}
+.meta{font-size:clamp(11px,3.1vw,13px);color:#c6ccdc;display:grid;gap:2px}
+/* holographic layers */
+.holo,.glare{position:absolute;inset:0;pointer-events:none;border-radius:inherit}
+.holo{
+  background:
+    repeating-linear-gradient(115deg,rgba(255,0,150,.0) 0 14px,rgba(255,255,255,.05) 14px 15px),
+    conic-gradient(from var(--ang) at var(--mx) var(--my),
+      #ff5ea8,#ffb86b,#f4ff6b,#6bffb1,#6bd4ff,#8b6bff,#ff5ea8);
+  mix-blend-mode:screen;opacity:calc(.1 + var(--glare) * .3);
+  -webkit-mask-image:linear-gradient(135deg,transparent 0,#000 35%,#000 65%,transparent 100%);
+  mask-image:linear-gradient(135deg,transparent 0,#000 35%,#000 65%,transparent 100%);
+}
+.glare{
+  background:radial-gradient(circle at var(--mx) var(--my),rgba(255,255,255,.55),transparent 45%);
+  mix-blend-mode:soft-light;opacity:calc(var(--glare));
+}
+.tilt-hint{color:var(--muted);font-size:13px;min-height:18px;transition:opacity .4s}
+
+.actions{display:grid;gap:10px;width:min(92vw,420px)}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
+  padding:16px;border-radius:14px;font-weight:600;font-size:17px;border:0;cursor:pointer;
+}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#07080d}
+.btn.ghost{background:rgba(255,255,255,.06);color:var(--ink);box-shadow:0 0 0 1px rgba(255,255,255,.1) inset;font-size:15px;padding:13px}
+.btn:active{transform:scale(.98)}
+.greet{color:var(--accent2);font-size:14px;height:18px}
+@media (prefers-reduced-motion:reduce){.card,.card.idle{animation:none;transition:none}}
+</style>
+</head>
+<body>
+  <div class="who">
+    <div class="greet" id="greet"></div>
+    <h1>Vignesh</h1>
+    <p>Point Academy</p>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="card idle" id="card">
+      <div class="face">
+        <div class="brand"><span class="logo">P</span>Point Academy</div>
+        <div>
+          <div class="name">Vignesh</div>
+          <div class="role">ROLE TITLE</div>
+        </div>
+        <div class="meta">
+          <span>+00 000 000 0000</span>
+          <span>vignesh@pointacademy.com</span>
+          <span>pointacademy.com</span>
+        </div>
+      </div>
+      <div class="holo"></div>
+      <div class="glare"></div>
+    </div>
+  </div>
+  <div class="tilt-hint" id="hint">Tilt or drag the card</div>
+
+  <div class="actions">
+    <a class="btn primary" id="save" href="vignesh.vcf" download="Vignesh - Point Academy.vcf">Add to Contacts</a>
+    <a class="btn ghost" href="https://pointacademy.com">Visit pointacademy.com</a>
+  </div>
+
+<script>
+(function(){
+  var card=document.getElementById('card'), stage=document.getElementById('stage'),
+      hint=document.getElementById('hint'), root=document.documentElement.style;
+  var MAX=14;
+
+  // how the page was opened: NFC tap vs QR/link
+  try{
+    var src=new URLSearchParams(location.search).get('src');
+    if(src==='nfc') document.getElementById('greet').textContent='Tapped. Nice to meet you.';
+  }catch(e){}
+
+  function set(px,py){            // px,py in 0..1
+    root.setProperty('--mx',(px*100).toFixed(1)+'%');
+    root.setProperty('--my',(py*100).toFixed(1)+'%');
+    root.setProperty("--ang",((px*220+py*140)).toFixed(0)+"deg");
+    root.setProperty('--ry',((px-.5)*2*MAX).toFixed(2)+'deg');
+    root.setProperty('--rx',((.5-py)*2*MAX).toFixed(2)+'deg');
+    root.setProperty('--glare',Math.min(1,Math.hypot(px-.5,py-.5)*2.2+.25).toFixed(2));
+  }
+  function stopIdle(){card.classList.remove('idle');hint.style.opacity=0}
+  function reset(){set(.5,.5);root.setProperty('--glare',0)}
+  reset();
+
+  // pointer (mouse + touch drag)
+  var active=false;
+  function pt(e){var r=card.getBoundingClientRect();
+    return [Math.min(1,Math.max(0,(e.clientX-r.left)/r.width)),Math.min(1,Math.max(0,(e.clientY-r.top)/r.height))]}
+  stage.addEventListener('pointerdown',function(e){active=true;stopIdle();var p=pt(e);set(p[0],p[1])});
+  stage.addEventListener('pointermove',function(e){if(active||e.pointerType==='mouse'){stopIdle();var p=pt(e);set(p[0],p[1])}});
+  window.addEventListener('pointerup',function(){active=false;if(!gyro)reset()});
+  stage.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse'&&!gyro)reset()});
+
+  // gyroscope (Android works directly; iOS needs a permission tap)
+  var gyro=false;
+  function onOrient(e){
+    if(e.gamma==null||e.beta==null)return;
+    gyro=true;stopIdle();
+    var gx=Math.max(-30,Math.min(30,e.gamma))/60+.5,
+        gy=Math.max(-30,Math.min(30,e.beta-40))/60+.5;
+    set(gx,gy);
+  }
+  function enableGyro(){
+    window.addEventListener('deviceorientation',onOrient,true);
+  }
+  var D=window.DeviceOrientationEvent;
+  if(D&&typeof D.requestPermission==='function'){
+    // iOS: ask on the first touch of the card, as required
+    stage.addEventListener('click',function once(){
+      stage.removeEventListener('click',once);
+      D.requestPermission().then(function(s){if(s==='granted')enableGyro()}).catch(function(){});
+    });
+    hint.textContent='Tap the card, then tilt your phone';
+  }else if(D){enableGyro()}
+})();
+</script>
+</body>
+</html>
