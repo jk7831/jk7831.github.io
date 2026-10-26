@@ -1,12 +1,7 @@
-/* Point Academy brand tokens - taken from the PA.Team app (same team).
-   Verify against pointacademy.com once reachable. */
+/* Palette matches the business card (Figma frame BusinessCard_FRONT/BACK) */
 :root{
-  --cream:#f5f1e8; --ink:#17140f; --card:#fbf9f4;
-  --muted:#17140f80; --border:#17140f1a;
-  --coral:#ff8a73; --yellow:#f4c94f; --lavender:#b7a6e8; --mint:#8fd9b6;
+  --mint:#c7efcf; --mint-soft:#e6f7ea; --mint-line:#add1b5;
+  --paper:#f6f6f6; --ink:#1f1f1f;
+  --muted:#1f1f1f99; --border:#1f1f1f26;
   --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  --mono:"Victor Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-}
-@media (prefers-color-scheme:dark){
-  :root{--cream:#17140f;--ink:#f2eee4;--card:#211d17;--muted:#f2eee48c;--border:#f2eee41f}
 }
