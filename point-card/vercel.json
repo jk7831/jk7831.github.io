@@ -1,13 +1,27 @@
 {
-  "cleanUrls": true,
   "rewrites": [
-    { "source": "/Vignesh", "destination": "/index.html" },
-    { "source": "/vignesh", "destination": "/index.html" }
+    {
+      "source": "/Vignesh",
+      "destination": "/"
+    },
+    {
+      "source": "/vignesh",
+      "destination": "/"
+    }
   ],
   "headers": [
-    { "source": "/(.*)\\.vcf", "headers": [
-      { "key": "Content-Type", "value": "text/vcard; charset=utf-8" },
-      { "key": "Content-Disposition", "value": "inline; filename=\"Vignesh - Point Academy.vcf\"" }
-    ] }
+    {
+      "source": "/(.*)\\.vcf",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/vcard; charset=utf-8"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename=\"Vignesh - Point Academy.vcf\""
+        }
+      ]
+    }
   ]
 }
