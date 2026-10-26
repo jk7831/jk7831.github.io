@@ -5,21 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vignesh · Point Academy</title>
 <meta name="description" content="Vignesh — Point Academy. Tap to save contact.">
-<meta name="theme-color" content="#07080d">
+<meta name="theme-color" content="#f5f1e8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Victor+Mono:wght@500;700&display=swap">
 <link rel="stylesheet" href="brand.css">
 <link rel="stylesheet" href="card.css">
 </head>
 <body>
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
   <div class="who">
     <div class="greet" id="greet"></div>
-    <h1>Vignesh</h1>
-    <p>Point Academy</p>
+    <p class="eyebrow"><img src="assets/logo.svg" alt="">Point Academy</p>
+    <h1>Hi, I'm <em>Vignesh.</em></h1>
+    <p>Tap below to save my contact.</p>
   </div>
 
   <div class="stage" id="stage">
     <div class="card idle" id="card">
       <div class="face">
-        <div class="brand"><img class="logo-img" src="assets/logo.svg" alt="" width="28" height="28">Point Academy</div>
+        <div class="brand"><img class="logo-img" src="assets/logo.svg" alt="">Point Academy</div>
         <div>
           <div class="name">Vignesh</div>
           <div class="role">ROLE TITLE</div>
@@ -38,7 +42,7 @@
   <div class="tilt-hint" id="hint">Tilt or drag the card</div>
 
   <div class="actions">
-    <a class="btn primary" id="save" href="vignesh.vcf" download="Vignesh - Point Academy.vcf">Add to Contacts</a>
+    <a class="btn primary" id="save" href="vignesh.vcf" download="Vignesh - Point Academy.vcf"><span>Add to Contacts</span><i></i><span aria-hidden="true">→</span></a>
     <a class="btn ghost" href="https://pointacademy.com">Visit pointacademy.com</a>
   </div>
 
@@ -55,7 +59,7 @@
   // how the page was opened: NFC tap vs QR/link
   try{
     var src=new URLSearchParams(location.search).get('src');
-    if(src==='nfc') document.getElementById('greet').textContent='Tapped. Nice to meet you.';
+    if(src==='nfc') document.getElementById('greet').textContent='Tapped. Nice to meet you';
   }catch(e){}
 
   function set(px,py){            // px,py in 0..1

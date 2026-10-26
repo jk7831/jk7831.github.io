@@ -1,9 +1,12 @@
-/* BRAND TOKENS - replace with values extracted from pointacademy.com */
+/* Point Academy brand tokens - taken from the PA.Team app (same team).
+   Verify against pointacademy.com once reachable. */
 :root{
-  --bg:#07080d;          /* TODO: site background */
-  --ink:#f4f6fb;         /* TODO: site text colour */
-  --muted:#8b93a7;       /* TODO: secondary text */
-  --accent:#7c5cff;      /* TODO: primary brand colour */
-  --accent2:#22d3ee;     /* TODO: secondary brand colour */
-  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; /* TODO: site font */
+  --cream:#f5f1e8; --ink:#17140f; --card:#fbf9f4;
+  --muted:#17140f80; --border:#17140f1a;
+  --coral:#ff8a73; --yellow:#f4c94f; --lavender:#b7a6e8; --mint:#8fd9b6;
+  --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"Victor Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{--cream:#17140f;--ink:#f2eee4;--card:#211d17;--muted:#f2eee48c;--border:#f2eee41f}
 }
