@@ -1,7 +1,10 @@
-/* Palette matches the business card (Figma frame BusinessCard_FRONT/BACK) */
+/* Point Academy tokens - read from pointacademy.com (cream/ink/mint, Graphik) and the card export */
+@font-face{font-family:Graphik;src:url(fonts/Graphik-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Graphik;src:url(fonts/Graphik-Medium.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:Graphik;src:url(fonts/Graphik-Semibold.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:Graphik;src:url(fonts/Graphik-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
 :root{
-  --mint:#c7efcf; --mint-soft:#e6f7ea; --mint-line:#add1b5;
-  --paper:#f6f6f6; --ink:#1f1f1f;
-  --muted:#1f1f1f99; --border:#1f1f1f26;
-  --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --cream:#f2ebdc; --ink:#1a1a1a; --mint:#c7eed0; --paper:#f6f6f6;
+  --muted:#1a1a1a99; --border:#1a1a1a26;
+  --font:Graphik,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
