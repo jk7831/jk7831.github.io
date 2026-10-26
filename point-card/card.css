@@ -64,3 +64,28 @@ body{
 .btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
 .btn:hover{opacity:.9}.btn:active{transform:scale(.98)}
 @media (prefers-reduced-motion:reduce){.card,.card.idle{animation:none;transition:none}}
+
+/* ---- real card front/back (from Figma 336x192 frame) ---- */
+.card{container-type:inline-size;background:#f6f6f6;color:#1f1f1f;--u:calc(100cqw / 336);box-shadow:0 30px 60px -24px rgba(23,20,15,.45),0 0 0 1px rgba(23,20,15,.08)}
+.flip{position:absolute;inset:0}
+.side{position:absolute;inset:0;overflow:hidden;border-radius:inherit}
+.side[hidden]{display:none}
+.back{background:#c7efcf}
+.mark{position:absolute;width:calc(296*var(--u));left:calc(116*var(--u));top:calc(40*var(--u));opacity:.28;
+  filter:invert(80%) sepia(30%) saturate(500%) hue-rotate(80deg) brightness(1.05);pointer-events:none}
+.back .mark{left:calc(220*var(--u));top:calc(-14*var(--u));opacity:.3;filter:brightness(0) invert(1)}
+.wordmark{position:absolute;left:calc(22*var(--u));top:calc(18*var(--u));display:flex;align-items:center;gap:calc(3*var(--u));font-size:calc(14*var(--u));line-height:1;letter-spacing:-.02em}
+.wordmark b{font-weight:800}.wordmark span{font-weight:400}
+.wordmark img{width:calc(13*var(--u));height:calc(13*var(--u))}
+.wordmark.big{left:50%;top:50%;transform:translate(-50%,-50%);font-size:calc(33*var(--u));color:#fff;gap:calc(6*var(--u))}
+.wordmark.big img{width:calc(30*var(--u));height:calc(30*var(--u));filter:brightness(0) invert(1)}
+.contact{position:absolute;right:calc(20*var(--u));top:calc(18*var(--u));list-style:none;padding:0;text-align:right;font-size:calc(9.4*var(--u));line-height:calc(12*var(--u))}
+.contact li{display:flex;justify-content:flex-end;align-items:center;gap:calc(4*var(--u))}
+.contact svg{width:calc(9.5*var(--u));height:calc(9.5*var(--u))}
+.cname{position:absolute;left:calc(20*var(--u));top:calc(96*var(--u));font-size:calc(25*var(--u));line-height:calc(27*var(--u));font-weight:700;letter-spacing:-.02em}
+.chip{position:absolute;left:calc(20*var(--u));top:calc(157*var(--u));display:flex;align-items:center;gap:calc(5*var(--u));
+  background:#c7efcf;border:1px solid #add1b5;padding:calc(1.5*var(--u)) calc(5*var(--u)) calc(1.5*var(--u)) calc(2*var(--u));font-size:calc(7.3*var(--u));line-height:calc(11*var(--u))}
+.chip svg{width:calc(11*var(--u));height:calc(11*var(--u))}
+.qr{position:absolute;left:calc(266*var(--u));top:calc(120*var(--u));width:calc(50*var(--u));height:calc(50*var(--u))}
+.holo{mix-blend-mode:multiply;opacity:calc(.04 + var(--glare) * .2)}
+.glare{mix-blend-mode:soft-light}

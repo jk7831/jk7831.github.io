@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Vignesh · Point Academy</title>
-<meta name="description" content="Vignesh — Point Academy. Tap to save contact.">
+<title>Vignesh Hariharan · Point Academy</title>
+<meta name="description" content="Vignesh Hariharan, Head of Operations & Business Development at Point Academy.">
 <meta name="theme-color" content="#f5f1e8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Victor+Mono:wght@500;700&display=swap">
@@ -22,27 +22,33 @@
 
   <div class="stage" id="stage">
     <div class="card idle" id="card">
-      <div class="face">
-        <div class="brand"><img class="logo-img" src="assets/logo.svg" alt="">Point Academy</div>
-        <div>
-          <div class="name">Vignesh</div>
-          <div class="role">ROLE TITLE</div>
+      <div class="flip" id="flip">
+        <div class="side front" id="front">
+          <div class="wordmark"><b>point</b><img src="assets/logo-dark.svg" alt=""><span>cademy</span></div>
+          <img class="mark" src="assets/logo-dark.svg" alt="">
+          <ul class="contact">
+            <li>vignesh@pointacademy.com<svg viewBox="0 0 24 24"><path d="M3 5h18v14H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg></li>
+            <li>pointacademy.com<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></li>
+            <li>+ 971 58 297 6643<svg viewBox="0 0 24 24"><path d="M6.6 3.5l2.4 4.6-1.9 1.8a12 12 0 006.9 6.9l1.8-1.9 4.6 2.4-.9 3c-.2.6-.8 1-1.4 1A17.500 17.500 0 013 5.800c0-.6.4-1.200 1-1.400z" fill="currentColor"/></svg></li>
+          </ul>
+          <h2 class="cname">Vignesh<br>Hariharan</h2>
+          <div class="chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1f1f1f"/><path d="M6 12h11m-4-5l5 5-5 5" fill="none" stroke="#c7efcf" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>HEAD OF OPERATIONS &amp; BUSINESS DEVELOPMENT</span></div>
+          <img class="qr" src="assets/qr.svg" alt="QR code for this card">
         </div>
-        <div class="meta">
-          <span>+00 000 000 0000</span>
-          <span>vignesh@pointacademy.com</span>
-          <span>pointacademy.com</span>
+        <div class="side back" id="back" hidden>
+          <img class="mark" src="assets/logo-dark.svg" alt="">
+          <div class="wordmark big"><b>point</b><img src="assets/logo-dark.svg" alt=""><span>cademy</span></div>
         </div>
       </div>
-      <img class="art" id="art" src="assets/card-front.png" alt="Vignesh - Point Academy business card">
+      <img class="art" id="art" src="assets/card-front.png" alt="Vignesh Hariharan - Point Academy business card">
       <div class="holo"></div>
       <div class="glare"></div>
     </div>
   </div>
-  <div class="tilt-hint" id="hint">Tilt or drag the card</div>
+  <div class="tilt-hint" id="hint">Tilt, drag or tap to flip</div>
 
   <div class="actions">
-    <a class="btn primary" id="save" href="vignesh.vcf" download="Vignesh - Point Academy.vcf"><span>Add to Contacts</span><i></i><span aria-hidden="true">→</span></a>
+    <a class="btn primary" id="save" href="vignesh.vcf" download="Vignesh Hariharan - Point Academy.vcf"><span>Add to Contacts</span><i></i><span aria-hidden="true">→</span></a>
     <a class="btn ghost" href="https://pointacademy.com">Visit pointacademy.com</a>
   </div>
 
@@ -85,6 +91,14 @@
 
   // gyroscope (Android works directly; iOS needs a permission tap)
   var gyro=false;
+  var front=document.getElementById('front'),back=document.getElementById('back'),flip=document.getElementById('flip'),flipped=false,moved=0;
+  stage.addEventListener('pointerdown',function(e){moved=0;stage._x=e.clientX;stage._y=e.clientY});
+  stage.addEventListener('pointerup',function(e){if(Math.hypot(e.clientX-stage._x,e.clientY-stage._y)<8)doFlip()});
+  function doFlip(){
+    flip.style.transition='transform .18s ease-in';flip.style.transform='rotateY(90deg)';
+    setTimeout(function(){flipped=!flipped;front.hidden=flipped;back.hidden=!flipped;
+      flip.style.transition='transform .18s ease-out';flip.style.transform='rotateY(0deg)'},180);
+  }
   function onOrient(e){
     if(e.gamma==null||e.beta==null)return;
     gyro=true;stopIdle();
@@ -102,7 +116,7 @@
       stage.removeEventListener('click',once);
       D.requestPermission().then(function(s){if(s==='granted')enableGyro()}).catch(function(){});
     });
-    hint.textContent='Tap the card, then tilt your phone';
+    hint.textContent='Tap to flip + enable tilt';
   }else if(D){enableGyro()}
 })();
 </script>

@@ -1,10 +1,10 @@
 BEGIN:VCARD
 VERSION:3.0
-N:;Vignesh;;;
-FN:Vignesh
+N:Hariharan;Vignesh;;;
+FN:Vignesh Hariharan
 ORG:Point Academy
-TITLE:ROLE TITLE
-TEL;TYPE=CELL,VOICE:+00 000 000 0000
+TITLE:Head of Operations & Business Development
+TEL;TYPE=CELL,VOICE:+971582976643
 EMAIL;TYPE=INTERNET,WORK:vignesh@pointacademy.com
 URL:https://pointacademy.com
 NOTE:Met at [AI SHOW NAME]\, [DATE]
