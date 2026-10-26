@@ -112,11 +112,11 @@
   var D=window.DeviceOrientationEvent;
   if(D&&typeof D.requestPermission==='function'){
     // iOS: ask on the first touch of the card, as required
-    stage.addEventListener('click',function once(){
-      stage.removeEventListener('click',once);
+    document.addEventListener('click',function once(){
+      document.removeEventListener('click',once);
       D.requestPermission().then(function(s){if(s==='granted')enableGyro()}).catch(function(){});
     });
-    hint.textContent='Tap to flip + enable tilt';
+    hint.textContent='Tap anywhere to enable tilt';
   }else if(D){enableGyro()}
 })();
 </script>
