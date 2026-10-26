@@ -1,0 +1,66 @@
+
+:root{
+  --mx:50%; --my:50%; --ang:180deg; --rx:0deg; --ry:0deg; --glare:0;
+}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{
+  background:radial-gradient(120% 80% at 50% 0%,#141633 0%,var(--bg) 60%);
+  color:var(--ink);font:16px/1.4 var(--font);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  padding:max(24px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom));
+  overflow-x:hidden;
+}
+.who{text-align:center}
+.who h1{font-size:clamp(28px,8vw,40px);letter-spacing:-.02em;font-weight:700}
+.who p{color:var(--muted);margin-top:4px;font-size:15px}
+
+.stage{perspective:900px;width:min(92vw,420px);touch-action:pan-y}
+.card{
+  position:relative;aspect-ratio:1.75/1;width:100%;border-radius:18px;
+  transform:rotateX(var(--rx)) rotateY(var(--ry));
+  transition:transform .15s ease-out;will-change:transform;
+  background:linear-gradient(135deg,#10122a,#0a0b16);
+  box-shadow:0 30px 60px -20px rgba(124,92,255,.45),0 0 0 1px rgba(255,255,255,.08) inset;
+  overflow:hidden;cursor:grab;
+}
+.card.idle{animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:rotateX(4deg) rotateY(-6deg)}}
+.face{position:absolute;inset:0;padding:6% 7%;display:flex;flex-direction:column;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.02em}
+.logo{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-weight:800;color:#07080d;font-size:15px}
+.name{font-size:clamp(22px,6.5vw,30px);font-weight:700;letter-spacing:-.01em}
+.role{color:var(--muted);font-size:clamp(12px,3.4vw,14px);margin-top:2px}
+.meta{font-size:clamp(11px,3.1vw,13px);color:#c6ccdc;display:grid;gap:2px}
+/* holographic layers */
+.holo,.glare{position:absolute;inset:0;pointer-events:none;border-radius:inherit}
+.holo{
+  background:
+    repeating-linear-gradient(115deg,rgba(255,0,150,.0) 0 14px,rgba(255,255,255,.05) 14px 15px),
+    conic-gradient(from var(--ang) at var(--mx) var(--my),
+      #ff5ea8,#ffb86b,#f4ff6b,#6bffb1,#6bd4ff,#8b6bff,#ff5ea8);
+  mix-blend-mode:screen;opacity:calc(.1 + var(--glare) * .3);
+  -webkit-mask-image:linear-gradient(135deg,transparent 0,#000 35%,#000 65%,transparent 100%);
+  mask-image:linear-gradient(135deg,transparent 0,#000 35%,#000 65%,transparent 100%);
+}
+.glare{
+  background:radial-gradient(circle at var(--mx) var(--my),rgba(255,255,255,.55),transparent 45%);
+  mix-blend-mode:soft-light;opacity:calc(var(--glare));
+}
+.tilt-hint{color:var(--muted);font-size:13px;min-height:18px;transition:opacity .4s}
+
+.actions{display:grid;gap:10px;width:min(92vw,420px)}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
+  padding:16px;border-radius:14px;font-weight:600;font-size:17px;border:0;cursor:pointer;
+}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#07080d}
+.btn.ghost{background:rgba(255,255,255,.06);color:var(--ink);box-shadow:0 0 0 1px rgba(255,255,255,.1) inset;font-size:15px;padding:13px}
+.btn:active{transform:scale(.98)}
+.greet{color:var(--accent2);font-size:14px;height:18px}
+@media (prefers-reduced-motion:reduce){.card,.card.idle{animation:none;transition:none}}
+
+.art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;border-radius:inherit}
+.card.has-art .art{display:block}
+.card.has-art .face{display:none}
+.logo-img{border-radius:8px}
