@@ -9,8 +9,8 @@ body{
 }
 /* mint glows, echoing the mint on the card */
 .blob{position:absolute;border-radius:9999px;filter:blur(70px);pointer-events:none;z-index:0}
-.b1{width:26rem;height:26rem;top:-10rem;left:-10rem;background:color-mix(in srgb,var(--mint) 75%,transparent)}
-.b2{width:30rem;height:30rem;bottom:-13rem;right:-12rem;background:color-mix(in srgb,var(--mint) 65%,transparent)}
+.b1{width:26rem;height:26rem;top:-10rem;left:-10rem;background:color-mix(in srgb,var(--accent) 75%,transparent)}
+.b2{width:30rem;height:30rem;bottom:-13rem;right:-12rem;background:color-mix(in srgb,var(--accent) 65%,transparent)}
 .b3{display:none}
 .who,.stage,.tilt-hint,.actions{position:relative;z-index:1}
 
@@ -19,7 +19,7 @@ body{
 .eyebrow img{width:11px;height:11px}
 .greet{color:var(--ink);font:600 11px var(--font);letter-spacing:.12em;text-transform:uppercase;height:16px;margin-bottom:8px}
 .who h1{font-size:clamp(30px,9vw,42px);letter-spacing:-.025em;font-weight:700;line-height:1.1;margin-top:2px}
-.who h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--mint) 62%);padding:0 .06em}
+.who h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--accent) 62%);padding:0 .06em}
 .who p{color:var(--muted);margin-top:6px;font-size:14px}
 
 .stage{perspective:900px;width:min(92vw,420px);touch-action:pan-y}
@@ -52,8 +52,8 @@ body{
   padding:16px 20px;border-radius:9999px;font:600 15px var(--font);letter-spacing:.01em;
   cursor:pointer;transition:opacity .15s;border:1px solid var(--ink);
 }
-.btn.primary{background:var(--ink);color:var(--mint)}
-.btn.primary i{width:1px;height:16px;background:color-mix(in srgb,var(--mint) 35%,transparent)}
+.btn.primary{background:var(--ink);color:var(--accent)}
+.btn.primary i{width:1px;height:16px;background:color-mix(in srgb,var(--accent) 35%,transparent)}
 .btn.ghost{background:rgba(255,255,255,.5);color:var(--ink);border:1px solid var(--border)}
 .btn:hover{opacity:.9}.btn:active{transform:scale(.98)}
 @media (prefers-reduced-motion:reduce){.card,.card.idle{animation:none;transition:none}}

@@ -1,0 +1,50 @@
+{
+  "event": "",
+  "people": [
+    {
+      "slug": "vignesh",
+      "name": "Vignesh Hariharan",
+      "first": "Vignesh",
+      "title": "Head of Operations & Business Development",
+      "phone": "+971582976643",
+      "email": "vignesh@pointacademy.com",
+      "accent": "#c7efcf"
+    },
+    {
+      "slug": "afroz",
+      "name": "Afroz Nawaf",
+      "first": "Afroz",
+      "title": "Founder & Head",
+      "phone": "+971509249624",
+      "email": "afroz@pointacademy.com",
+      "accent": "#ffda22"
+    },
+    {
+      "slug": "jatin",
+      "name": "Jatin Kalwani",
+      "first": "Jatin",
+      "title": "Head of Creative Growth",
+      "phone": "+971557080873",
+      "email": "jatin@pointacademy.com",
+      "accent": "#8eabe0"
+    },
+    {
+      "slug": "vayuvee",
+      "name": "Vayuvee Gupta",
+      "first": "Vayuvee",
+      "title": "Creative Growth Associate",
+      "phone": "+971554360934",
+      "email": "vayuvee@pointacademy.com",
+      "accent": "#f8a8cd"
+    },
+    {
+      "slug": "desiree",
+      "name": "Desiree Barreto",
+      "first": "Desiree",
+      "title": "Head of Brand, Community & Partnerships",
+      "phone": "",
+      "email": "",
+      "accent": "#cab8d9"
+    }
+  ]
+}

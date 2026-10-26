@@ -2,11 +2,83 @@
   "rewrites": [
     {
       "source": "/Vignesh",
-      "destination": "/"
+      "destination": "/vignesh/index.html"
+    },
+    {
+      "source": "/Vignesh/",
+      "destination": "/vignesh/index.html"
     },
     {
       "source": "/vignesh",
-      "destination": "/"
+      "destination": "/vignesh/index.html"
+    },
+    {
+      "source": "/vignesh/",
+      "destination": "/vignesh/index.html"
+    },
+    {
+      "source": "/afroz",
+      "destination": "/afroz/index.html"
+    },
+    {
+      "source": "/afroz/",
+      "destination": "/afroz/index.html"
+    },
+    {
+      "source": "/Afroz",
+      "destination": "/afroz/index.html"
+    },
+    {
+      "source": "/Afroz/",
+      "destination": "/afroz/index.html"
+    },
+    {
+      "source": "/Jatin",
+      "destination": "/jatin/index.html"
+    },
+    {
+      "source": "/Jatin/",
+      "destination": "/jatin/index.html"
+    },
+    {
+      "source": "/jatin",
+      "destination": "/jatin/index.html"
+    },
+    {
+      "source": "/jatin/",
+      "destination": "/jatin/index.html"
+    },
+    {
+      "source": "/Vayuvee",
+      "destination": "/vayuvee/index.html"
+    },
+    {
+      "source": "/Vayuvee/",
+      "destination": "/vayuvee/index.html"
+    },
+    {
+      "source": "/vayuvee",
+      "destination": "/vayuvee/index.html"
+    },
+    {
+      "source": "/vayuvee/",
+      "destination": "/vayuvee/index.html"
+    },
+    {
+      "source": "/Desiree",
+      "destination": "/desiree/index.html"
+    },
+    {
+      "source": "/Desiree/",
+      "destination": "/desiree/index.html"
+    },
+    {
+      "source": "/desiree",
+      "destination": "/desiree/index.html"
+    },
+    {
+      "source": "/desiree/",
+      "destination": "/desiree/index.html"
     }
   ],
   "headers": [
@@ -16,10 +88,6 @@
         {
           "key": "Content-Type",
           "value": "text/vcard; charset=utf-8"
-        },
-        {
-          "key": "Content-Disposition",
-          "value": "inline; filename=\"Vignesh Hariharan - Point Academy.vcf\""
         }
       ]
     }
