@@ -17,19 +17,19 @@
       "destination": "/vignesh/index.html"
     },
     {
-      "source": "/afroz",
-      "destination": "/afroz/index.html"
-    },
-    {
-      "source": "/afroz/",
-      "destination": "/afroz/index.html"
-    },
-    {
       "source": "/Afroz",
       "destination": "/afroz/index.html"
     },
     {
       "source": "/Afroz/",
+      "destination": "/afroz/index.html"
+    },
+    {
+      "source": "/afroz",
+      "destination": "/afroz/index.html"
+    },
+    {
+      "source": "/afroz/",
       "destination": "/afroz/index.html"
     },
     {

@@ -74,7 +74,7 @@ for p in data["people"]:
     open(f"{s}/index.html", "w").write(PAGE.format(base=BASE, name=esc(p["name"]), title=esc(p["title"]),
                                                   first=esc(p["first"]), slug=s, accent=p["accent"]))
     open(f"{s}.vcf", "w").write(vcard(p))
-    for v in {s, s.capitalize()}:
+    for v in sorted({s, s.capitalize()}):
         rewrites.append({"source": f"/{v}", "destination": f"/{s}/index.html"})
         rewrites.append({"source": f"/{v}/", "destination": f"/{s}/index.html"})
     print("built", s)
